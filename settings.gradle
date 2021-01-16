@@ -1,1 +1,2 @@
 include ':app', ':framework'
+rootProject.name = "CarPlay"
