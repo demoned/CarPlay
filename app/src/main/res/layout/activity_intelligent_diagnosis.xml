@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/all_area_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/top_area_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/intelligent_diagnosis"
+                android:textColor="@color/white"
+                android:textSize="19sp" />
+        </FrameLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/diagnosis_scroll_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/search_anim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="7dp"
+                        android:src="@mipmap/intelligent_diagnosis_bg" />
+
+                    <TextView
+                        android:id="@+id/re_diagnosis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/re_diagnosis"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp">
+
+                        <TextView
+                            android:id="@+id/card_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/icc_id_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="19dp">
+
+                            <TextView
+                                android:id="@+id/status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/white"
+                                android:textSize="21sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="14dp"
+                            android:background="#058BE8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="诊断结果"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="19dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="19dp"
+                        android:paddingRight="19dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/real_name_authentication"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/real_name_authentication_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/real_name_authentication"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/diagnosis_of_card_package"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/diagnosis_of_card_package_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/diagnosis_of_card_package"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/activation_state"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/activation_state_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/activation_state"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/update_voice_data"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/update_voice_data_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/update_voice_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/speech_usage_detection"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/speech_usage_detection_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/speech_usage_detection"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/update_traffic_data"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/update_traffic_data_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/update_traffic_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/flow_usage_detection"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/flow_usage_detection_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/flow_usage_detection"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/white_list_diagnosis"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/white_list_diagnosis_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/white_list_diagnosis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="14dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/card_diagnosis"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="1dp">
+
+                                <TextView
+                                    android:id="@+id/card_diagnosis_notice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/wait_result"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:id="@+id/card_diagnosis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@mipmap/message_check"
+                                    android:visibility="gone" />
+                            </FrameLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="4dp"
+                            android:layout_height="14dp"
+                            android:background="#058BE8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="@string/diagnostic_recommendations"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/result_normal_area"
+                            android:layout_width="wrap_content"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:layout_marginBottom="19dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="@string/detection_result"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="您的流量卡目前处于正常状态！"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/result_unusual_area"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginRight="14dp"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:id="@+id/real_name_authentication_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/real_name_authentication_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/diagnosis_of_card_package_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/diagnosis_of_card_package_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/activation_state_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/activation_state_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/update_voice_data_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/update_voice_data_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/speech_usage_detection_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/speech_usage_detection_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/update_traffic_data_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/update_traffic_data_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/flow_usage_detection_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/flow_usage_detection_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/white_list_diagnosis_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/white_list_diagnosis_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/card_diagnosis_notice_result_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="12dp"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/card_diagnosis_notice_result"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp" />
+                            </FrameLayout>
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/back_to_main_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="40dp"
+        android:alpha="0.6"
+        android:background="@drawable/shape_circle"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/back_to_main_view"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</FrameLayout>
+

@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+//android配置
+def androidConfig = rootProject.ext.androidConfig
+//相关依赖库
+def frameworkDependencies = rootProject.ext.frameworkDependencies
+
+android {
+    compileSdkVersion androidConfig.androidCompileSdkVersion
+    buildToolsVersion androidConfig.androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion androidConfig.androidMinSdkVersion
+        targetSdkVersion androidConfig.androidTargetSdkVersion
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'true'
+            buildConfigField 'String', 'SERVER_URL', '"http://api.iot100.online/"'
+
+//            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/9/"'
+//            buildConfigField 'String', 'APP_ID', '"C9CF4F160FE49042AA08A6705DC4E326"'
+//            buildConfigField 'String', 'APP_SECRETS', '"0F78C9B0B7B11B4ECCB8832BC4A49C98"'
+//
+//            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/10/"'
+//            buildConfigField 'String', 'APP_ID', '"41DD6E37A6EE0A4F60AA39CA8A3AA386"'
+//            buildConfigField 'String', 'APP_SECRETS', '"E38B83C8CE6DFC46E7C9BCBC841C8EE3"'
+
+
+            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/10/"'
+            buildConfigField 'String', 'APP_ID', '"CFBBFBD78EC2731A4208A4802E4A3DE9"'
+            buildConfigField 'String', 'APP_SECRETS', '"D9CF4912EA8C0ECB70B11592C9BD2900"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'IS_DEBUG', 'false'
+            buildConfigField 'String', 'SERVER_URL', '"http://api.iot100.online/"'
+
+//            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/9/"'
+//            buildConfigField 'String', 'APP_ID', '"C9CF4F160FE49042AA08A6705DC4E326"'
+//            buildConfigField 'String', 'APP_SECRETS', '"0F78C9B0B7B11B4ECCB8832BC4A49C98"'
+
+//            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/10/"'
+//            buildConfigField 'String', 'APP_ID', '"41DD6E37A6EE0A4F60AA39CA8A3AA386"'
+//            buildConfigField 'String', 'APP_SECRETS', '"E38B83C8CE6DFC46E7C9BCBC841C8EE3"'
+
+            buildConfigField 'String', 'WECHAT_URL', '" http://mm.iot100.online/10/"'
+            buildConfigField 'String', 'APP_ID', '"CFBBFBD78EC2731A4208A4802E4A3DE9"'
+            buildConfigField 'String', 'APP_SECRETS', '"D9CF4912EA8C0ECB70B11592C9BD2900"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api frameworkDependencies.javaxAnnotation
+    api frameworkDependencies.retrofit
+    api frameworkDependencies.retrofitConverterGson
+    api frameworkDependencies.retrofitAdapterRxjava
+    api frameworkDependencies.okHttp
+    api frameworkDependencies.rxAndroid
+    api frameworkDependencies.rxJava
+    api frameworkDependencies.logger
+    api frameworkDependencies.eventbus
+    api frameworkDependencies.glide
+    api frameworkDependencies.gson
+    api frameworkDependencies.supportV4
+    api frameworkDependencies.supportV7
+    api frameworkDependencies.wechat
+    api frameworkDependencies.fastjson
+    api frameworkDependencies.fragmentation
+    api frameworkDependencies.recyclerView
+    api frameworkDependencies.cardview
+    api frameworkDependencies.picasso
+    api frameworkDependencies.okhttp3Logging
+    api frameworkDependencies.zxing
+    api 'me.jessyan:autosize:1.1.2'
+    api 'com.wang.avi:library:2.1.3'
+    api 'com.github.Demons15:ServiceKeepLive:v1.2'
+    api frameworkDependencies.mqttv3
+    api frameworkDependencies.mqttService
+    api frameworkDependencies.location
+}

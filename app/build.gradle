@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+//android配置
+def androidConfig = rootProject.ext.androidConfig
+//发布apk版本配置
+def versionConfig = rootProject.extensions.ext
+android {
+    compileSdkVersion androidConfig.androidCompileSdkVersion
+    buildToolsVersion androidConfig.androidBuildToolsVersion
+    defaultConfig {
+        minSdkVersion androidConfig.androidMinSdkVersion
+        targetSdkVersion androidConfig.androidTargetSdkVersion
+        testInstrumentationRunner androidConfig.testInstrumentationRunner
+
+        applicationId versionConfig.androidApplicationId
+        versionCode versionConfig.androidVersionCode
+        versionName versionConfig.androidVersionName
+
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('../buildsystem/carplay')
+            storePassword "cxsz123456"
+            keyAlias "carplay"
+            keyPassword "cxsz123456"
+        }
+        release {
+            storeFile file('../buildsystem/carplay')
+            storePassword "cxsz123456"
+            keyAlias "carplay"
+            keyPassword "cxsz123456"
+        }
+    }
+    buildTypes {
+        debug {
+            versionNameSuffix ''
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false    //不混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = new File("app" + "-" + defaultConfig.versionName + "." + defaultConfig.versionCode + "-" + variant.buildType.name + ".apk")
+        }
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':framework')
+}

@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lock_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#242424">
+
+    <TextView
+        android:id="@+id/lock_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="50dp"
+        android:text="17:30"
+        android:textColor="#ffffff"
+        android:textSize="38sp" />
+
+    <TextView
+        android:id="@+id/lock_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lock_time"
+        android:layout_alignLeft="@id/lock_time"
+        android:layout_marginTop="5dp"
+        android:includeFontPadding="false"
+        android:text="12月21日 星期三"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView_noti"
+        android:layout_width="200dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        app:srcCompat="@mipmap/welcome_logo" />
+
+
+    <TextView
+        android:id="@+id/textView_noti_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView_noti"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="歌曲名称"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/textView_noti_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_noti_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="专辑名称"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/hinttextview"
+        android:layout_below="@id/textView_noti_name"
+        android:layout_centerHorizontal="true"
+        android:divider="?android:listDivider"
+        android:dividerPadding="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/imageView_noti_prev"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_media_previous" />
+
+        <ImageButton
+            android:id="@+id/imageView_noti_play"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/imageView_noti_next"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_media_next" />
+
+    </LinearLayout>
+
+    <com.cxsz.elu.main.view.widget.HintTextView
+        android:id="@+id/hinttextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:includeFontPadding="false"
+        android:text=">>> 滑动解锁"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:visibility="gone" />
+</RelativeLayout>
+

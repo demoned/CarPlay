@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:showIn="@layout/fragment_info">
+
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/module_bg_left_bottom_icon" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/module_bg_left_top_icon" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="14dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/module_bg_right_bottom_icon" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/module_bg_right_top_icon" />
+</merge>

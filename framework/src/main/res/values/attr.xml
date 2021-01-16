@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleProgressBarView">
+        <attr name="progress_color" format="color" />
+        <attr name="progress_bg_color" format="color" />
+        <attr name="bar_width" format="dimension" />
+
+        <attr name="start_angle" format="float" />
+        <attr name="sweep_angle" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowShowView">
+        <attr name="text_spacing" format="integer" />
+        <attr name="arc_start_angle" format="float" />
+        <attr name="arc_sweep_angle" format="float" />
+        <attr name="progress_anim_time" format="integer" />
+        <attr name="large_between_calibration_number" format="integer" />
+        <attr name="arc_spacing" format="dimension" />
+        <attr name="outer_arc_color" format="color" />
+        <attr name="progress_point_radius" format="float" />
+        <attr name="value_text_size" format="integer" />
+        <attr name="value_text_color" format="color" />
+        <attr name="date_text_size" format="integer" />
+        <attr name="outer_arc_width" format="dimension" />
+        <attr name="progress_point_color" format="color" />
+        <attr name="indicator_arc_width" format="dimension" />
+        <attr name="calibration_text_size" format="integer" />
+        <attr name="default_size" format="dimension" />
+        <attr name="default_padding" format="dimension" />
+        <attr name="center_width" format="dimension" />
+    </declare-styleable>
+</resources>

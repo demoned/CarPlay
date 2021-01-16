@@ -1,0 +1,71 @@
+<resources>
+
+    <style name="FullTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:screenOrientation">landscape</item>
+    </style>
+    <!-- new -->
+    <style name="customer_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/float_transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="FullTheme">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <attr name="colorOn" format="reference" />
+    <attr name="colorOff" format="reference" />
+    <attr name="expander" format="reference" />
+    <attr name="iconQueue" format="reference" />
+    <attr name="iconMetered" format="reference" />
+    <attr name="iconSettings" format="reference" />
+    <attr name="iconDatasaver" format="reference" />
+    <attr name="iconLaunch" format="reference" />
+    <attr name="iconDelete" format="reference" />
+    <attr name="iconPlay" format="reference" />
+    <attr name="iconPause" format="reference" />
+
+    <style name="AnimHead" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/head_in</item>
+        <item name="android:windowExitAnimation">@anim/head_out</item>
+    </style>
+
+    <style name="custom_dialog_style">
+        <!-- alertDialog���ڱ���ɫ -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--dialog�Ƿ��б߿�-->
+        <item name="android:windowFrame">@null</item>
+        <!--dialog�Ƿ��б���-->
+        <item name="android:windowNoTitle">true</item>
+        <!--�Ƿ�����activity֮��-->
+        <item name="android:windowIsFloating">true</item>
+        <!--�Ƿ��͸��-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--�Ƿ����ڸ�(eg.Activity������ҳ)-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--��������-->
+        <item name="android:windowAnimationStyle">@style/AnimHead</item>
+        <!--�����Ƿ�ģ����ʾ-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="LockScreenTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

@@ -1,0 +1,45 @@
+
+apply from: 'buildsystem/dependencies.gradle'
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.novoda:bintray-release:0.5.0'
+    }
+}
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "http://maven.aliyun.com/nexus/content/repositories/releases/"
+        }
+        maven { url "http://dl.bintray.com/drummer-aidan/maven" }
+        maven { url "http://dl.bintray.com/drummer-aidan/maven/com/afollestad" }
+        jcenter()
+        maven {
+            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
+        maven {
+            url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        }
+        google()
+    }
+    ext {
+        androidApplicationId = 'com.net.cxsz.onenet'
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

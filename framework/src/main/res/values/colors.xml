@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="gray">#c5c5c5</color>
+    <color name="gray_1">#a5a5a5</color>
+    <color name="yellow_1">#eac910</color>
+    <color name="customer_dialog_bg_color">#323335</color>
+    <color name="black">#000000</color>
+    <color name="blue_1">#10a6f0</color>
+    <color name="green">#66d819</color>
+    <color name="number_no_jh">#FF1947</color>
+    <color name="number_tingji">#EF8200</color>
+    <!-- new -->
+    <color name="float_transparent">#00000000</color>
+    <color name="half_transparent">#e0000000</color>
+
+    <color name="button_bg_press">#eaeaea</color>
+
+
+    <color name="main_bg_color">#171A1E</color>
+    <color name="button_color">#3B98FF</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_CCCCCC">#cccccc</color>
+    <color name="color_999999">#999999</color>
+
+    <color name="model_area_bg_color">#1A1A1A</color>
+    <color name="title_text_color">#5F5F5F</color>
+    <color name="notice_color">#EA9A34</color>
+    <color name="second_title_color">#757575</color>
+    <color name="color_7CA1D2">#7CA1D2</color>
+    <color name="color_1D90F6">#1D90F6</color>
+    <color name="color_0A8CFF">#0A8CFF</color>
+    <color name="color_E2AA24">#E2AA24</color>
+    <color name="color_45F0EA">#45F0EA</color>
+</resources>
